@@ -10,10 +10,20 @@ class CadastroController extends Controller
     {
         return view ('cadastro');
     }
-    public  function  salvarCadastro (Request $request)
+    public  function cadastroCompleto (Request $request)
     {
-        //banco de dados imaginário
+        $nomeComp = $request->nomeComp;
+        $matricula = $request->matricula;
+        $dataNasc = $request->dataNasc;
+        $senha = $request->senha; 
+        $resultado = $nomeComp;
 
-        return  view ('resultado');
+        return  view ('resultado', compact ('resultado'));
     }
+    public function listarUsuarios()
+    {
+        return view ('lista');
+    }
+    
+
 }
