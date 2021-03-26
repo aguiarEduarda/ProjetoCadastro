@@ -83,32 +83,24 @@
             <table class="table">
                 <thead>
                   <tr>
-                    <th scope="col">Nome completo</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nome</th>
                     <th scope="col">Matrícula</th>
-                    <th scope="col">Data de nasc</th>
+                    <th scope="col">Data de Nascimento</th>
                     <th scope="col">Senha</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td scope="row">Ana Silva Sá</td>
-                    <td>823732</td>
-                    <td>21/11/2001</td>
-                    <td>@mod12</td>
-                  </tr>
-                  <tr>
-                    <td scope="row">Rafael Medeiros Souza</td>
-                    <td>223212</td>
-                    <td>11/01/1999</td>
-                    <td>ft384o1</td>
-                  </tr>
-                  <tr>
-                    <td scope="row">Larry Terom de Bazal</td>
-                    <td>88288289392</td>
-                    <td>06/11/1996</td>
-                    <td>1Ams@124</td>
-                  </tr>
-                </tbody>
+                @foreach ($usuarios as $item)
+                  <tbody>
+                    <tr>
+                      <td scope="row">{{$item->id}}</td>
+                      <td scope="row">{{$item->nome}}</td>
+                      <td>{{$item->matricula}}</td>
+                      <td>{{$item->data_nascimento}}</td>
+                      <td>{{$item->senha}}</td>
+                    </tr>
+                  </tbody>
+                @endforeach
               </table>
         </form>
 </body>

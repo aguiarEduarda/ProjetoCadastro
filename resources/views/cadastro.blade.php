@@ -78,12 +78,12 @@
           <h1>Formulario de Cadastro</h1>  
       </div> 
       <div class="row">
-        <form method="POST" action="{{ route('cadastrar') }}">
+        <form method="POST" action="{{route('salvarUsuario')}}">
             @csrf
             <div class="form-group row">
               <label for="example-text-input" class="col-2 col-form-label">Nome completo</label>
               <div class="col-10">
-                <input type="text" style="background-color: rgb(241, 158, 102)" class="form-control" id="nomeComp" name="nomecomp">
+                <input type="text" style="background-color: rgb(241, 158, 102)" class="form-control" id="nome" name="nome">
               </div>
             </div>
             <div class="form-group row">
@@ -95,7 +95,7 @@
               <div class="form-group row">
                 <label for="example-date-input" class="col-2 col-form-label">Data de nascimento</label>
                 <div class="col-10">
-                  <input type="date" style="background-color: rgb(241, 158, 102)" class="form-control" id="dataNasc" name="datanasc">
+                  <input type="date" style="background-color: rgb(241, 158, 102)" class="form-control" id="data_nascimento" name="data_nascimento">
                 </div>
               </div>
               <div class="form-group row">
@@ -104,7 +104,7 @@
                   <input type="password" style="background-color: rgb(241, 158, 102)" class="form-control" id="senha" name="senha">
                 </div>
               </div>
-              <button type="submit" class="btn btn-outline-dark">Cadastrar</button>
+              <button type="submit" class="btn btn-outline-dark">Salvar</button>
               <footer>
                 Todos os direitos reservados à Maria Eduarda Nascimento Aguiar.
             </footer>
