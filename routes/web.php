@@ -23,4 +23,8 @@ Route::post ('/salvar-usuario', '\App\Http\Controllers\CadastroController@salvar
 
 Route::get ('/lista', '\App\Http\Controllers\CadastroController@listarUsuarios')->name('lista');
 
+Route::get ('/atualizar/{id}', '\App\Http\Controllers\CadastroController@atualizar')->name('carregarAtualizacao');
+Route::post ('/atualizar-usuario', '\App\Http\Controllers\CadastroController@atualizado')->name('atualizarUsuario');
+
+
 
