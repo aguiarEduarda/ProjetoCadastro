@@ -24,6 +24,22 @@ class CadastroController extends Controller
         return  view ('usuario.show', compact ('usuario'));
     }
 
+    public function atualizar()
+    {
+        return view ('usuario.atualizar');
+    }
+    public function atualizado ($id, Request $request){
+
+        $usuario = new Usuario();
+        $usuario->nome = $request->nome;
+        $usuario->matricula = $request->matricula;
+        $usuario->data_nascimento = $request->data_nascimento;
+        $usuario->senha = $request->senha; 
+        $usuario->save();
+
+        return  view ('usuario.atualizado', compact ('usuario'));
+    }
+
     public function listarUsuarios()
     {
         $usuarios = Usuario::All();
