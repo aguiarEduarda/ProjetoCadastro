@@ -14,7 +14,7 @@
         body {
             font-family: 'Blinker', Roboto, 'Open Sans', Arial, Helvetica;
             color: black;
-            background-color:  rgb(240, 170, 106);
+            background-color: rgb(246, 243, 237);
         }
         *{
             margin: 0;
@@ -70,7 +70,6 @@
               <li><a href="public" style="font-weight: bold">Home</a></li>
               <li><a href="cadastro">Cadastrar</a></li>
               <li><a href="lista">Lista de usuários</a></li>
-              <li><a href="atualizar">Atualizar usuário</a></li>
           </ul>
         </div>
     <div class="row mt-2">
@@ -79,7 +78,7 @@
           <br>
       </div> 
       <div class="row">
-        <form method="GET" action="{{ route('lista') }}">
+        <form method="GET" action="{{route('listarUsuarios')}}">
             @csrf
             <table class="table">
                 <thead>
@@ -89,16 +88,19 @@
                     <th scope="col">Matrícula</th>
                     <th scope="col">Data de Nascimento</th>
                     <th scope="col">Senha</th>
+                    <th scope="col">Ações</th>
                   </tr>
                 </thead>
-                @foreach ($usuarios as $item)
+                @foreach ($usuarios as $usuario)
                   <tbody>
                     <tr>
-                      <td scope="row">{{$item->id}}</td>
-                      <td scope="row">{{$item->nome}}</td>
-                      <td>{{$item->matricula}}</td>
-                      <td>{{$item->data_nascimento}}</td>
-                      <td>{{$item->senha}}</td>
+                      <th scope="row">{{$usuario->id}}</th>
+                      <td scope="row">{{$usuario->nome}}</td>
+                      <td>{{$usuario->matricula}}</td>
+                      <td>{{$usuario->data_nascimento}}</td>
+                      <td>{{$usuario->senha}}</td>
+                      <td><a href="{{route('editarUsuario', $usuario->id)}}">Editar</a></td>
+                      <td><a href="{{route('excluirUsuario', $usuario->id)}}">Excluir</a></td>
                     </tr>
                   </tbody>
                 @endforeach

@@ -21,10 +21,12 @@ Route::get ('/cadastro', '\App\Http\Controllers\CadastroController@cadastro')->n
 
 Route::post ('/salvar-usuario', '\App\Http\Controllers\CadastroController@salvar')->name('salvarUsuario');
 
-Route::get ('/lista', '\App\Http\Controllers\CadastroController@listarUsuarios')->name('lista');
+Route::post ('/salvar-edicao', '\App\Http\Controllers\CadastroController@salvarEdicao')->name('salvarEdicao');
 
-Route::get ('/atualizar/{id}', '\App\Http\Controllers\CadastroController@atualizar')->name('carregarAtualizacao');
-Route::post ('/atualizar-usuario', '\App\Http\Controllers\CadastroController@atualizado')->name('atualizarUsuario');
+Route::get ('/lista', '\App\Http\Controllers\CadastroController@listarUsuarios')->name('listarUsuarios');
 
+Route::get ('usuario/editar/{id}', '\App\Http\Controllers\CadastroController@editarUsuario')->name('editarUsuario');
+
+Route::get ('usuario/excluir/{id}', '\App\Http\Controllers\CadastroController@excluirUsuario')->name('excluirUsuario');
 
 

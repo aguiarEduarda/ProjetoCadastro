@@ -68,10 +68,9 @@
     <div class="container">
        <div class="row mt-2" id="menu">
           <ul>
-              <li><a href="welcome" style="font-weight: bold">Home</a></li>
+              <li><a href="public" style="font-weight: bold">Home</a></li>
               <li><a href="cadastro">Cadastrar</a></li>
               <li><a href="lista">Lista de usuários</a></li>
-              <li><a href="atualizar">Atualizar usuário</a></li>
           </ul>
         </div>
     <div class="row mt-2">
@@ -79,30 +78,31 @@
           <h1>Formulario de Atualização</h1>  
       </div> 
       <div class="row">
-        <form method="POST" action="{{route('atualizarUsuario')}}">
+        <form method="POST" action="{{route('salvarEdicao')}}">
             @csrf
+            <input type="hidden" name="id" value="{{$usuario->id}}">
             <div class="form-group row">
               <label for="example-text-input" class="col-2 col-form-label">Nome completo</label>
               <div class="col-10">
-                <input type="text" style="background-color: rgb(241, 158, 102)" class="form-control" id="nome" name="nome">
+                <input type="text" style="background-color: rgb(241, 158, 102)" class="form-control" id="nome" name="nome" value="{{$usuario->nome}}">
               </div>
             </div>
             <div class="form-group row">
               <label for="example-date-input" class="col-2 col-form-label">Matrícula</label>
               <div class="col-10">
-                <input type="number" style="background-color: rgb(241, 158, 102)" class="form-control" id="matricula" name="matricula">
+                <input type="number" style="background-color: rgb(241, 158, 102)" class="form-control" id="matricula" name="matricula" value="{{$usuario->matricula}}">
               </div>
             </div>
               <div class="form-group row">
                 <label for="example-date-input" class="col-2 col-form-label">Data de nascimento</label>
                 <div class="col-10">
-                  <input type="date" style="background-color: rgb(241, 158, 102)" class="form-control" id="data_nascimento" name="data_nascimento">
+                  <input type="date" style="background-color: rgb(241, 158, 102)" class="form-control" id="data_nascimento" name="data_nascimento" value="{{$usuario->data_nascimento}}">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="example-password-input" class="col-2 col-form-label">Senha</label>
                 <div class="col-10">
-                  <input type="password" style="background-color: rgb(241, 158, 102)" class="form-control" id="senha" name="senha">
+                  <input type="password" style="background-color: rgb(241, 158, 102)" class="form-control" id="senha" name="senha" value="{{$usuario->senha}}">
                 </div>
               </div>
               <button type="submit" class="btn btn-outline-dark">Atualizar</button>
