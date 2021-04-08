@@ -72,26 +72,42 @@
               <li><a href="cadastro">Cadastrar</a></li>
               <li><a href="lista">Lista de usuários</a></li>
               <li><a href="atualizar">Atualizar usuário</a></li>
+
+              <li><a href="novoEndereco">Cadastrar enderço</a></li>
+              <li><a href="listaEndereco">Lista de endereços</a></li>
           </ul>
         </div>
             <div class="row">
-                <h1>O usuário foi atualizado com sucesso!</h1>
+                <h1>O endereço foi cadastrado com sucesso!</h1>
             </div> 
+            <div class="row mt-3"> 
             <div class="row">
-                <div style="font-weight: bold" class="col-md-2">Nome</div> 
-                <div class="col-md-10">{{$usuario->nome}}</div> 
+                <div style="font-weight: bold" class="col-md-2">CEP</div> 
+                <div class="col-md-10">{{ $endereco->cep}}</div> 
             </div>
             <div class="row">
-                <div style="font-weight: bold" class="col-md-2">Matrícula</div> 
-                <div class="col-md-10">{{$usuario->matricula}}</div> 
+                <div style="font-weight: bold" class="col-md-2">Logradouro</div> 
+                <div class="col-md-10">{{ $endereco->logradouro}}</div>
             </div>
             <div class="row">
-                <div style="font-weight: bold" class="col-md-2">Data de Nascimento</div> 
-                <div class="col-md-10">{{$usuario->data_nascimento}}</div> 
+                <div style="font-weight: bold" class="col-md-2">Número</div> 
+                <div class="col-md-10">{{ $endereco->numero}}</div>
             </div>
             <div class="row">
-                <div style="font-weight: bold" class="col-md-2">Senha</div> 
-                <div class="col-md-10">{{$usuario->senha}}</div> 
+                <div style="font-weight: bold" class="col-md-2">Complemento</div> 
+                <div class="col-md-10">{{ $endereco->complemento}}</div>
+            </div>
+            <div class="row">
+                <div style="font-weight: bold" class="col-md-2">Bairro</div> 
+                <div class="col-md-10">{{ $endereco->bairro}}</div>
+            </div>
+            <div class="row">
+                <div style="font-weight: bold" class="col-md-2">Cidade</div> 
+                <div class="col-md-10">{{ $endereco->cidade}}</div>
+            </div>
+            <div class="row">
+                <div style="font-weight: bold" class="col-md-2">Estado</div> 
+                <div class="col-md-10">{{ $endereco->estado}}</div>
             </div>
         </div> 
         <footer>

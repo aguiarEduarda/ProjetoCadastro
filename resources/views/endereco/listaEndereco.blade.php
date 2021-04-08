@@ -74,40 +74,39 @@
               <li><a href="novoEndereco">Cadastrar enderço</a></li>
               <li><a href="listaEndereco">Lista de endereços</a></li>
           </ul>
-        </div>
-    <div class="row mt-2">
-      <div class="row">
-          <h1>Lista de Usuários</h1>  
-          <br>
-      </div> 
-      <div class="row">
-        <form method="GET" action="{{route('listarUsuarios')}}">
-            @csrf
-            <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Matrícula</th>
-                    <th scope="col">Data de Nascimento</th>
-                    <th scope="col">Senha</th>
-                    <th scope="col">Ações</th>
-                  </tr>
-                </thead>
-                @foreach ($usuarios as $usuario)
-                  <tbody>
-                    <tr>
-                      <th scope="row">{{$usuario->id}}</th>
-                      <td scope="row">{{$usuario->nome}}</td>
-                      <td>{{$usuario->matricula}}</td>
-                      <td>{{$usuario->data_nascimento}}</td>
-                      <td>{{$usuario->senha}}</td>
-                      <td><a href="{{route('editarUsuario', $usuario->id)}}">Editar</a></td>
-                      <td><a href="{{route('excluirUsuario', $usuario->id)}}">Excluir</a></td>
-                    </tr>
-                  </tbody>
-                @endforeach
-              </table>
-        </form>
+        </div>    
+    <table class="table">
+      <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">CEP</th>
+                  <th scope="col">Logradouro</th>
+                  <th scope="col">Número</th>
+                  <th scope="col">Complomento</th>
+                  <th scope="col">Bairro</th>
+                  <th scope="col">Cidade</th>
+                  <th scope="col">Estado</th>
+                  <th scope="col">Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+            @foreach ($endereco as $endereco)
+                <tr>
+                  <th scope="row">{{$endereco->id}}</th>
+                  <td>{{$endereco->cep}}</td>
+                  <td>{{$endereco->logradouro}}</td>
+                  <td>{{$endereco->numero}}</td>
+                  <td>{{$endereco->complemento}}</td>
+                  <td>{{$endereco->bairro}}</td>
+                  <td>{{$endereco->cidade}}</td>
+                  <td>{{$endereco->estado}}</td>
+                  <td>
+                  <a href="{{ route ('editarEndereco', $endereco->id) }}">Editar</a>
+                  <a href="{{ route ('excluirEndereco', $endereco->id) }}">Excluir</a>
+                  </td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
 </body>
 </html>
