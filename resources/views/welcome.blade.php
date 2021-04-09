@@ -88,8 +88,14 @@
     <div class="container">
        <div class="row mt-2" id="menu">
           <ul>
-              <li><a href="cadastro">Cadastrar</a></li>
-              <li><a href="lista">Lista de usuários</a></li>
+            <li><a href="public" style="font-weight: bold">Home</a></li>
+            <li><a href="cadastro">Cadastrar</a></li>
+            <li><a href="lista">Lista de usuários</a></li>
+
+            <li><a href="novoEndereco">Cadastrar enderço</a></li>
+            <li><a href="listaEndereco">Lista de endereços</a></li>
+
+            <li><a href="usuarioEndereco">User&Endereço</a></li>
           </ul>
         </div>
         <div class="row mt-2" id="header">

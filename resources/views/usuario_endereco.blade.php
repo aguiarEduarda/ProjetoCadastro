@@ -80,49 +80,68 @@
         </div>
     <div class="row mt-2">
       <div class="row">
-          <h1>Novo Endereço</h1>  
+          <h1>Cadastro Usuário</h1>  
       </div> 
-      
-            <div class="row">
-            <form method="POST" action="{{route('resultadoEndereco')}}">
-              @csrf
-              <div class="mb-3">
-                <label for="cep" class="form-label">CEP</label>
-                <input type="text" class="form-control" id="cep" name="cep">
-              </div>
-              <div class="mb-3">
-                <label for="logradouro" class="form-label">Logradouro</label>
-                <input type="text" class="form-control" id="logradouro" name="logradouro">
-              </div>
-              <div class="mb-3">
-                <label for="numero" class="form-label">Número</label>
-                <input type="text" class="form-control" id="numero" name="numero">
-              </div>
-              <div class="mb-3">
-                <label for="complemento" class="form-label">Complemento</label>
-                <input type="text" class="form-control" id="complemento" name="complemento">
-              </div>
-              <div class="mb-3">
-                <label for="bairro" class="form-label">Bairro</label>
-                <input type="text" class="form-control" id="bairro" name="bairro">
-              </div>
-              <div class="mb-3">
-                <label for="cidade" class="form-label">Cidade</label>
-                <input type="text" class="form-control" id="cidade" name="cidade">
-              </div>
-              <div class="mb-3">
-                <label for="estado" class="form-label">Estado</label>
-                <input type="text" class="form-control" id="estado" name="estado">
-              </div>
-              <div class="row">
-                <button type="submit" class="btn btn-outline-dark">Salvar</button>
-              </div>
-              <br>
-              </form>
-            </div>
-            </div>
+      <div class="row">
+        <form method="POST" action="{{ route('salvarUsuario') }}">
+            @csrf
 
-              <footer>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Nome Completo</label>
+            <input type="string" class="form-control" id="nomeInput" name="nome" ><br>
+           
+          </div>
+          <div class="form-group">
+              <label for="exampleInputEmail1">Data de Nascimento</label>
+              <input type="date" class="form-control" id="dataInput" name="data_nascimento"><br>
+             
+            </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Senha</label>
+            <input type="password" class="form-control" id="senhaInput" name="senha"><br>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Matrícula</label>
+            <input type="number" class="form-control" id="matriculaInput" name="matricula">
+          </div>
+
+              <h1>Cadastro de Endereço</h1>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Bairro</label>
+                <input type="string" class="form-control" id="bairroInput" name="bairro" ><br>
+               
+              </div>
+              <div class="form-group">
+                  <label for="exampleInputEmail1">Cidade</label>
+                  <input type="string" class="form-control" id="cidadeInput" name="cidade"><br>
+                 
+                </div>
+                <div class="mb-3">
+                    <label for="estado" class="form-label">Estado</label>
+                    <input type="text" class="form-control" id="estado" name="estado">
+                  </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Complemento </label>
+                <input type="string" class="form-control" id="complementoInput" name="complemento">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Numero </label>
+                <input type="number" class="form-control" id="numeroInput" name="numero">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Logradouro </label>
+                <input type="string" class="form-control" id="logradouroInput" name="logradouro">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">CEP </label>
+                <input type="string" class="form-control" id="cepInput" name="cep">
+              </div>
+          
+            <button type="submit" class="btn btn-outline-dark">Salvar</button>
+            <br>
+            <br>
+            <footer>
                 Todos os direitos reservados à Maria Eduarda Nascimento Aguiar.
             </footer>
           </div>

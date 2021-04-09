@@ -7,6 +7,7 @@ use App\Models\Endereco;
 
 class EnderecoController extends Controller
 {
+
     public function novoEndereco()
     {
        return view ('endereco.novoEndereco');
@@ -27,9 +28,23 @@ class EnderecoController extends Controller
         return view('endereco.showEndereco', compact('endereco'));
     }
 
+    public function salvarEndereco(Request $request)
+    {
+        $endereco  = Endereco::where('id', $request->id)->first();
+        $endereco ->logradouro= $request->logradouro;
+        $endereco ->complemento = $request->complemento;
+        $endereco ->bairro =$request->bairro;
+        $endereco ->cidade = $request->cidade;
+        $endereco ->estado = $request->estado;
+        $endereco ->numero= $request->numero;
+        $endereco->cep = $request->cep;
+        $usuario->update();
+        return redirect (route ('carregarListaEndereco'));
+    }
+
     public function listaEndereco()
     {
-        $endereco = Endereco::all();
+        $endereco = Endereco::orderBy("id", "asc")->get();
         return view('endereco.listaEndereco', compact('endereco'));
     }
 
