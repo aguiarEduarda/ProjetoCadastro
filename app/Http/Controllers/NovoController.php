@@ -32,7 +32,7 @@ class NovoController extends Controller
         $endereco->numero = $request->numero;
         $endereco->logradouro = $request->logradouro;
         $endereco->cep = $request->cep;
-        $endereco->usuario_id = $usuario->id;
+        $endereco->id = $usuario->id;
         $endereco->save();  
         return redirect (route ('listaEndereco'));
     }

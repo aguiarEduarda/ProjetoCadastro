@@ -83,7 +83,7 @@
           <h1>Cadastro Usuário</h1>  
       </div> 
       <div class="row">
-        <form method="POST" action="{{ route('salvarUsuario') }}">
+        <form method="POST" action="{{ route('saveUsuario') }}">
             @csrf
 
           <div class="form-group">

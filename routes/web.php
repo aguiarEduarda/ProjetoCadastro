@@ -40,5 +40,5 @@ Route::get ('/usuario-endereco', 'App\Http\Controllers\CadastroController@usuari
 Route::prefix('usuario')->group(function () 
 {
     Route::get('create', 'App\Http\Controllers\novoController@create')->name('createUsuario');
-    Route::POST('save', 'App\Http\Controllers\novoController@save')->name('saveUsuario');
+    Route::post('save', 'App\Http\Controllers\novoController@save')->name('saveUsuario');
 });
